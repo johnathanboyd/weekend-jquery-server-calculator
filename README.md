@@ -29,12 +29,12 @@
     },*** 
 
 ## Step 3: spit some LOGIC!
-[] - create user interface w/ two inputs and math operations
-[] - create button to submit "="
-    [] - handle click to capture input (nums & operator)
-    [] - put in object
-    [] - send object to server via POST
-[] - create clear button to empty inputs
+[X] - create user interface w/ two inputs and math operations
+[X] - create button to submit "="
+    [X] - handle click to capture input (nums & operator)
+    [X] - put in object
+    [X] - send object to server via POST
+[X] - create clear button to empty inputs
     ***server side***
 [] - compute numbers -> send OK
 [] - get REQ after the POST to get actual calculation

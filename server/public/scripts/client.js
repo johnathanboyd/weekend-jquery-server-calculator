@@ -10,14 +10,14 @@ function onReady(){
     $( '.operators' ).on('click', '#divideButton', operation );
     $( '#clearButton').on('click', clear);
     // initialization
-
+    
 } // end onReady
 
 function getNums(){
     console.log( 'in getNums');
      // get user inputs & put into Object
 
-     let equation = {
+     let elements = {
          num1: $( '#num1' ).val(),
          operation: operator,
          num2: $( '#num2' ).val(),
@@ -26,13 +26,15 @@ function getNums(){
     // send object to server via POST
      $.ajax({
          type: 'POST',
-         url: '/calculations',
-         data: equation
+         url: '/elements',
+         data: elements
      }).then( function(response){
          console.log('back from server POST', response);
+         getAnswer();
      }).catch( function( err){
-         console.log( 'error:',)
+         console.log( 'error:', err)
      })
+     getAnswer()
     // if successful send OK
     // catch errors
 }
@@ -46,3 +48,23 @@ function clear(){
     $( '.input' ).val('');
     let operator = "";
 }// end clear
+
+function getAnswer(){
+    $.ajax({
+        type: 'GET',
+        url: '/elements',
+    
+    }).then( function(response){
+        displayAnswer(response);
+    }).catch(function (err){
+        console.log( 'error:', err);
+    })
+    }
+
+function displayAnswer(object){
+    $('#equationOut').empty();
+    
+    $('#equatioinOut').append(`
+    <li> ${object.val1} ${object.operator} ${object.val2} ${object.sum} <li>
+    `)
+}
