@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <script src="vendors/jquery-3.5.1.min.js"></script>
     <script src="scripts/client.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
     <title>Server Calculator!
     </title>
 </head>
@@ -14,10 +14,12 @@
     <h1>Weekend Calculator!</h1>
     <div id="inputDiv">
         <input type="number" id="num1">
-        <button id="addButton">+</button>
-        <button id="minusButton">-</button>
-        <button id="multiplayButton">*</button>
-        <button id="divideButton">/</button>
+        <div class="operators">
+            <button data-maths+=${i} id="addButton">+</button>
+            <button id="minusButton">-</button>
+            <button id="multiplayButton">*</button>
+            <button id="divideButton">/</button>
+        </div>
         <input type="number" id="num2">
         <button id="equalButton">=</button>
         <button id="clearButton">C</button>
