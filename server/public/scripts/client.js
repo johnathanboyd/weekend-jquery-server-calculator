@@ -1,20 +1,25 @@
 $( document ).ready( onReady );
-
+let operator = "";
 function onReady(){
     console.log( 'jQ' );
     // Click handlers
     $( '#equalButton').on('click', getNums );
-    $( '.operators' ).on('click', operation );
+    $( '.operators' ).on('click', '#addButton', operation );
+    $( '.operators' ).on('click', '#minusButton', operation );
+    $( '.operators' ).on('click', '#multiplyButton', operation );
+    $( '.operators' ).on('click', '#divideButton', operation );
+    $( '#clearButton').on('click', clear);
     // initialization
-    
+
 } // end onReady
 
 function getNums(){
     console.log( 'in getNums');
      // get user inputs & put into Object
+
      let equation = {
          num1: $( '#num1' ).val(),
-         //operator: ,
+         operation: operator,
          num2: $( '#num2' ).val(),
 
      }
@@ -33,9 +38,11 @@ function getNums(){
 }
 
 function operation(){
-    console.log( 'in operation', $( this ).data( 'maths' ))
-    //if( $( '#addButton').on('click' )){
-      //  console.log( )
-        //return '+'
-    //} 
-}// end operation
+    operator = this.value;
+}// end operation 
+
+function clear(){
+    console.log('test');
+    $( '.input' ).val('');
+    let operator = "";
+}// end clear

@@ -10,7 +10,7 @@ app.use( bodyParser.urlencoded( { extended: true } ) );
 
 // globals
 const port = 5000;
-let calculations = {};
+let calculations = [];
 
 // spin up server
 app.listen( port, ()=>{
