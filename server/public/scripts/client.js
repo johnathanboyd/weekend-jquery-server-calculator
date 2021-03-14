@@ -52,19 +52,21 @@ function clear(){
 function getAnswer(){
     $.ajax({
         type: 'GET',
-        url: '/elements',
+        url: '/equations',
+    }).then(function(response){
+        console.log( ' back from GET:', response);
+        //target ul and empty
+        let el = $( '#equationOut' );
+        el.empty();
+        for( let i=0; i<response.length; i++){
+            el.append(`<li> ${response[i].val1} ${response[i].operator} ${response[i].val2} = ${response[i].sum}</li>`);
+        };
     
-    }).then( function(response){
-        displayAnswer(response);
     }).catch(function (err){
         console.log( 'error:', err);
     })
     }
 
 function displayAnswer(object){
-    $('#equationOut').empty();
-    
-    $('#equatioinOut').append(`
-    <li> ${object.val1} ${object.operator} ${object.val2} ${object.sum} <li>
-    `)
+   
 }

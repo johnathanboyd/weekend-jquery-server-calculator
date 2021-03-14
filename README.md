@@ -36,11 +36,15 @@
     [X] - send object to server via POST
 [X] - create clear button to empty inputs
     ***server side***
-[] - compute numbers -> send OK
-[] - get REQ after the POST to get actual calculation
-[] - keep track of history!!
+[X] - compute numbers -> send OK
+[X] - get REQ after the POST to get actual calculation
+[X] - keep track of history!!
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+For this problem we were tasked to create a calculator for a user to use in the browser. Our calculations were meant to occur on the server using POST/GET methods and send results back to the DOM for the user. 
+Once all of the required files were created the first step was to ensure that the client file was able to communicate with the server.js file.
+User interface was created such as inputs and buttons to collect data. The data is then wrapped up into an object and beamed up to a server file to be process.
+In the server file, data is run through a function to be processed according to the client request. once processed the data is then compiled into a new array!
+The new array is then sent back down to the client and then displayed on the DOM or users browser!
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).

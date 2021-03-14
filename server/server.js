@@ -64,13 +64,13 @@ function maths( elements ){
     if (elements.operation == '+'){
         equals.sum = Number(elements.num1) + Number(elements.num2);
         return equations.push(equals);
-    } else if (object.operation == '-'){
+    } else if (elements.operation == '-'){
         equals.sum = Number(elements.num1) - Number(elements.num2);
-        return equations.push(equals);
-    } else if (object.operation == '*'){
+        return equationss.push(equals);
+    } else if (elements.operation == '*'){
         equals.sum = Number(elements.num1) * Number(elements.num2);
         return equations.push(equals);
-    } else if (object.operation == '/'){
+    } else if (elements.operation == '/'){
         equals.sum = Number(elements.num1) / Number(elements.num2);
         return equations.push(equals);
     }
